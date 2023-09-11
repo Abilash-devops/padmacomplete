@@ -5,6 +5,12 @@ terraform {
       version = "5.16.1"
     }
   }
+  backend "s3" {
+    bucket   = "roboshop-terraform-padmasrikanth"
+    key = "demo"
+    region = "us-east-1"
+    dynamodb_table = "padma-roboshop"
+  }
 }
 
 provider "aws" {
