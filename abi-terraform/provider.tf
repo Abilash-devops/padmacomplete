@@ -7,7 +7,7 @@ terraform {
   }
   backend "s3" {
     bucket   = "roboshop-terraform-padmasrikanth"
-    key = "demo"
+    key = "demo1"
     region = "us-east-1"
     dynamodb_table = "padma-roboshop"
   }
