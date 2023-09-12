@@ -1,7 +1,7 @@
 resource "aws_security_group" "abiterraform" {
   name        = var.sg_name
   description = "Allow TLS inbound traffic"
-  # vpc_id      = aws_vpc.main.id
+  vpc_id      = aws_vpc.roboshop.id
 
   dynamic ingress {
     for_each = var.ingress

@@ -2,8 +2,10 @@ resource "aws_instance" "abiterraform" {
   for_each = var.instance_name
   ami           = local.ami
   instance_type = each.value
-  security_groups = [aws_security_group.abiterraform.name]
+  security_groups = [aws_security_group.abiterraform.id]
+  subnet_id = aws_subnet.publicsubnet.id
   key_name = aws_key_pair.abiterraform.key_name
+  associate_public_ip_address = true
   tags = {
     Name = each.key
   }
